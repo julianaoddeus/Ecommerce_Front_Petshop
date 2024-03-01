@@ -18,4 +18,5 @@ Criar um Frontend para uma Petshop com:
 - cadastro de produtos
 - carrinho de compras
 - área logada e área pública
+- autenticação 
 - construção de componentes mais avançados, com dependências externas e implementação de comunicação com uma API externa (mockada).
