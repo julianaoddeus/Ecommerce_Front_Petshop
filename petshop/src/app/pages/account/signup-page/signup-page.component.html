@@ -1,0 +1,37 @@
+<div class="uk-flex-center" uk-grid>
+  <div class="uk-width-1-3@m">
+    <p class="uk-text-center uk-margin-large-top uk-margin-medium-bottom">
+      <span class="uk-icon" uk-icon="icon: logo-color-dark; ratio: 0.7"></span>
+    </p>
+
+    <app-loading *ngIf="loading"></app-loading>
+
+    <form [formGroup]="form" *ngIf="!loading">
+      <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
+        <h3 class="uk-card-title">Cadastre-se</h3>
+        <div class="uk-margin">
+            <input type="text" class="uk-input uk-form-large" placeholder="Nome" formControlName="name"
+            [ngClass]="{ 'uk-form-danger': (form.controls['name'].invalid && !form.controls['name'].pristine) }">
+        </div>
+        <div class="uk-margin">
+            <input type="text" class="uk-input uk-form-large" placeholder="CPF" formControlName="document" mask="###.###.###-##"
+            [ngClass]="{ 'uk-form-danger': (form.controls['document'].invalid && !form.controls['document'].pristine) }">
+        </div>
+        <div class="uk-margin">
+            <input type="email" class="uk-input uk-form-large" placeholder="E-mail" formControlName="email"
+            [ngClass]="{ 'uk-form-danger': (form.controls['email'].invalid && !form.controls['email'].pristine) }">
+        </div>
+        <div class="uk-margin">
+            <input type="password" class="uk-input uk-form-large" placeholder="Senha" formControlName="password"
+            [ngClass]="{ 'uk-form-danger': (form.controls['password'].invalid && !form.controls['password'].pristine) }">
+        </div>
+        <div class="uk-margin uk-text-right">
+            <button href="/login" class="uk-button uk-button-default" [disabled]="form.invalid" (click)="submit()">Cadastrar</button>
+        </div>
+    </div>
+    </form>
+    <p class="uk-text-center" *ngIf="!loading">
+        <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="uk-button uk-button-link">Voltar</a>
+    </p>
+</div>
+
