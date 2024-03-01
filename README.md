@@ -1,6 +1,8 @@
 # Ecommerce_Front_Petshop
  Construção de uma página utilizando o uikit personalizado para um pesthop
 
+![Alt text](./tela_login.png)
+
  # Tecnologias utilizadas
 - Node.js 
 - Npm
